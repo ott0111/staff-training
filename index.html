@@ -4,205 +4,119 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Void Mod Training</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0a0614;
-  --card:#140f24;
-  --soft:#1b1533;
-  --accent:#7c3aed;
-  --accent2:#a855f7;
-  --text:#f3f0ff;
-  --muted:#b9b2d9;
+  --bg:#070312;
+  --bg2:#0e0720;
+  --card:#120a26;
+  --soft:#1a1036;
+  --accent:#8b5cf6;
+  --accent2:#c084fc;
+  --accent3:#6d28d9;
+  --text:#f5f3ff;
+  --muted:#bfb6e6;
+  --glow:0 0 40px rgba(139,92,246,.35);
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:'Inter',system-ui,Segoe UI,Roboto,Arial;
-  background:linear-gradient(180deg,#0b0f1a,#0e1424 40%,#0b0f1a);
   color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(139,92,246,.25), transparent 60%),
+    radial-gradient(1000px 500px at -10% 10%, rgba(192,132,252,.18), transparent 60%),
+    linear-gradient(180deg,var(--bg),var(--bg2) 40%,var(--bg));
 }
-.container{width:min(1200px,92%);margin:auto}
+.container{width:min(1250px,92%);margin:auto}
 header{
-  padding:80px 0 60px;
+  padding:110px 0 90px;
+  position:relative;
   text-align:center;
-  background:radial-gradient(circle at 50% 0%,rgba(108,92,255,.25),transparent 60%);
 }
 .badge{
   display:inline-block;
-  padding:6px 14px;
-  background:rgba(108,92,255,.15);
-  border:1px solid rgba(108,92,255,.35);
+  padding:8px 16px;
   border-radius:999px;
   font-size:12px;
-  letter-spacing:.5px;
+  letter-spacing:.6px;
   text-transform:uppercase;
-  margin-bottom:18px;
+  background:linear-gradient(90deg,rgba(139,92,246,.18),rgba(192,132,252,.18));
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(6px);
 }
 h1{
-  font-size:clamp(32px,5vw,56px);
-  margin:0 0 18px;
-  font-weight:800;
-  background:linear-gradient(90deg,#fff,#b8c1ff);
+  font-size:clamp(40px,6vw,72px);
+  margin:18px 0 16px;
+  font-weight:900;
+  letter-spacing:-1px;
+  background:linear-gradient(90deg,#ffffff,#dcd6ff 40%,#ffffff);
   -webkit-background-clip:text;
   color:transparent;
 }
 .subtitle{
-  font-size:18px;
+  font-size:20px;
   color:var(--muted);
-  max-width:780px;
-  margin:0 auto 28px;
-  line-height:1.6;
+  max-width:900px;
+  margin:0 auto 36px;
+  line-height:1.7;
 }
-.steps{
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
+.steps{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .step{
-  padding:10px 18px;
-  border-radius:12px;
-  background:var(--soft);
-  border:1px solid rgba(255,255,255,.06);
-  font-weight:600;
-  font-size:14px;
-}
-.credit{
-  margin-top:26px;
-  font-size:13px;
-  color:var(--muted);
-}
-.section{padding:70px 0;border-top:1px solid rgba(255,255,255,.05)}
-.section h2{
-  font-size:28px;
-  margin:0 0 28px;
-  letter-spacing:.3px;
-}
-.grid{
-  display:grid;
-  gap:22px;
-}
-.cards-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.cards-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{
-  background:var(--card);
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:18px;
-  padding:22px;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-.card h3{margin:0 0 12px;font-size:18px}
-.card p{margin:0;color:var(--muted);line-height:1.6;font-size:14px}
-.list{padding-left:18px;margin:10px 0 0}
-.list li{margin:6px 0;color:var(--muted);font-size:14px}
-.protocol{
-  margin-top:18px;
-  padding:16px;
-  background:rgba(0,212,255,.08);
-  border:1px solid rgba(0,212,255,.25);
+  padding:12px 20px;
   border-radius:14px;
-  font-size:14px;
-  color:#bfefff;
-}
-.roster-card{position:relative;overflow:hidden}
-.roster-card .icon{font-size:26px;margin-bottom:8px}
-.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.metric{
-  background:linear-gradient(180deg,#141b31,#10162a);
-  border:1px solid rgba(255,255,255,.05);
-  padding:18px;
-  border-radius:16px;
-}
-.metric h4{margin:0 0 8px}
-.guidelines{display:grid;gap:18px}
-.guideline{
-  padding:18px;
-  border-radius:16px;
-  background:var(--card);
-  border:1px solid rgba(255,255,255,.05);
-}
-.rolebox{
-  margin-top:10px;
-  padding:12px;
-  background:var(--soft);
-  border-radius:12px;
-  font-size:13px;
-  color:var(--muted);
-}
-.cta{
-  text-align:center;
-  padding:90px 0 110px;
-  background:radial-gradient(circle at 50% 100%,rgba(0,212,255,.18),transparent 60%);
-}
-.cta h2{font-size:34px;margin-bottom:14px}
-.cta p{color:var(--muted);margin-bottom:28px}
-.btn{
-  display:inline-block;
-  padding:16px 34px;
-  font-size:16px;
   font-weight:700;
-  border-radius:14px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  color:white;
-  text-decoration:none;
-  box-shadow:0 10px 25px rgba(108,92,255,.35);
-  transition:.2s transform,.2s box-shadow;
+  font-size:14px;
+  background:linear-gradient(180deg,var(--soft),#140b2b);
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:var(--glow);
 }
-.btn:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(108,92,255,.5)}
-footer{
-  border-top:1px solid rgba(255,255,255,.05);
-  padding:26px 0;
-  text-align:center;
-  color:var(--muted);
-  font-size:13px;
-}
+.credit{margin-top:34px;font-size:14px;color:var(--muted)}
 
-.progress-wrap{
-  margin:30px auto 10px;
-  max-width:520px;
-  text-align:left;
+.progress-wrap{margin:50px auto 0;max-width:560px;text-align:left}
+.progress-label{font-size:12px;color:var(--muted);margin-bottom:10px;letter-spacing:.7px;text-transform:uppercase}
+.progress-bar{width:100%;height:16px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent3),var(--accent),var(--accent2));box-shadow:0 0 30px rgba(139,92,246,.6);transition:width .5s ease}
+
+.section{padding:110px 0;position:relative}
+.section:before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.6}
+.section h2{font-size:36px;margin:0 0 40px;letter-spacing:.4px}
+
+.grid{display:grid;gap:26px}
+.cards-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.cards-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+
+.card{
+  background:linear-gradient(180deg,var(--card),#0e0820);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
-.progress-label{
-  font-size:13px;
-  color:var(--muted);
-  margin-bottom:8px;
-  letter-spacing:.4px;
-  text-transform:uppercase;
-}
-.progress-bar{
-  width:100%;
-  height:14px;
-  background:rgba(255,255,255,.08);
-  border-radius:999px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);
-}
-.progress-fill{
-  height:100%;
-  width:0%;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  border-radius:999px;
-  box-shadow:0 0 18px rgba(168,85,247,.6);
-  transition:width .6s ease;
-}
-.section{
-  padding:80px 0;
-  border-top:1px solid rgba(255,255,255,.05);
-  position:relative;
-}
-.section:before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:120px;
-  height:2px;
-  background:linear-gradient(90deg,transparent,var(--accent),transparent);
-  opacity:.7;
-}
+.card h3{margin:0 0 14px;font-size:20px}
+.card p{margin:0;color:var(--muted);line-height:1.7}
+.list{padding-left:18px;margin:12px 0 0}
+.list li{margin:8px 0;color:var(--muted)}
+
+.protocol{margin-top:26px;padding:20px;border-radius:18px;background:linear-gradient(90deg,rgba(139,92,246,.12),rgba(192,132,252,.12));border:1px solid rgba(255,255,255,.08);color:#ddd6ff}
+
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.metric{background:linear-gradient(180deg,#140c2b,#0f0a22);border:1px solid rgba(255,255,255,.06);padding:22px;border-radius:18px}
+.metric h4{margin:0 0 10px}
+
+.guidelines{display:grid;gap:22px}
+.guideline{padding:22px;border-radius:18px;background:linear-gradient(180deg,#140c2b,#0f0a22);border:1px solid rgba(255,255,255,.06)}
+
+.rolebox{margin-top:12px;padding:14px;background:var(--soft);border-radius:14px;color:var(--muted);font-size:14px}
+
+.cta{text-align:center;padding:130px 0;background:radial-gradient(circle at 50% 120%,rgba(139,92,246,.35),transparent 60%)}
+.cta h2{font-size:44px;margin-bottom:16px}
+.cta p{color:var(--muted);margin-bottom:34px;font-size:18px}
+.btn{display:inline-block;padding:18px 44px;font-size:18px;font-weight:800;border-radius:16px;background:linear-gradient(90deg,var(--accent3),var(--accent),var(--accent2));color:white;text-decoration:none;box-shadow:0 20px 50px rgba(139,92,246,.5);transition:.25s transform,.25s box-shadow}
+.btn:hover{transform:translateY(-4px);box-shadow:0 30px 70px rgba(139,92,246,.7)}
+
+footer{border-top:1px solid rgba(255,255,255,.06);padding:30px 0;text-align:center;color:var(--muted);font-size:14px}
 </style>
 </head>
 <body>
@@ -210,114 +124,74 @@ footer{
 <header>
   <div class="container">
     <div class="badge">Void Esports Staff Certification</div>
-
-    <div class="progress-wrap">
-      <div class="progress-label">Training Progress</div>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-    </div>
     <h1>Void Mod Training</h1>
-    <p class="subtitle">Comprehensive certification program for new Void Esports moderators. Master ticket handling, roster management, and community moderation through interactive scenarios and real-time testing.</p>
+    <p class="subtitle">Comprehensive certification program for new Void Esports moderators. This extended training ensures every staff member communicates professionally, handles tickets correctly, and represents Void Esports at the highest standard.</p>
+
     <div class="steps">
       <div class="step">Learn</div>
       <div class="step">Practice</div>
-      <div class="step">Complete</div>
+      <div class="step">Demonstrate</div>
+      <div class="step">Certify</div>
     </div>
-    <div class="credit">Made by Nicks Cold</div>
+
+    <div class="progress-wrap">
+      <div class="progress-label">Training Progress</div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+
+    <div class="credit">Made by Yeezy</div>
   </div>
 </header>
 
 <section class="section">
   <div class="container">
-    <h2>Ticket Types</h2>
-    <div class="grid cards-2">
-      <div class="card">
-        <h3>General Ticket</h3>
-        <p>Created by community members for support inquiries, moderator assistance, or reporting issues. Handle with professionalism and follow escalation procedures for complex matters.</p>
-      </div>
-      <div class="card">
-        <h3>Roster Ticket</h3>
-        <p>Application channel for users seeking to join Void Esports. Initial response must include age verification and direction to appropriate resources. Follow structured onboarding workflow.</p>
-      </div>
-    </div>
-    <div class="protocol"><strong>Protocol:</strong> All ticket responses must begin with a professional greeting and age inquiry. Direct applicants properly and maintain detailed records of all interactions.<br><br><strong>Reminder:</strong> Tickets labeled <strong>ticket-staff</strong> are for Staff Department members or higher only. Many new staff forget this rule.</div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2>Roster Categories & Requirements</h2>
+    <h2>Professional Conduct Standards</h2>
     <div class="grid cards-3">
-
-      <div class="card roster-card"><div class="icon">🏆</div><h3>Pro Roster</h3><ul class="list"><li>25,000+ Power Ranking</li><li>$1,000+ Fortnite Earnings</li><li>Consistent placements</li><li>Represent Void in-game & socials</li></ul></div>
-
-      <div class="card roster-card"><div class="icon">🎮</div><h3>Semi-Pro</h3><ul class="list"><li>10,000–25,000 PR</li><li>Consistent placements</li><li>Represent Void in-game</li><li>Use Fortnite Code</li><li>Earnings required</li></ul></div>
-
-      <div class="card roster-card"><div class="icon">🎓</div><h3>Academy Roster</h3><ul class="list"><li>500–10,000 PR</li><li>Consistent placements</li><li>Represent Void in-game</li><li>Use Fortnite Code</li></ul></div>
-
-      <div class="card roster-card"><div class="icon">🎨</div><h3>Creative Roster</h3><ul class="list"><li>Smooth / fast mechanics</li><li>Unique playstyle</li><li>Provide clips when asked</li><li>Represent Void in-game & socials</li></ul></div>
-
-      <div class="card roster-card"><div class="icon">🎙️</div><h3>Streamer</h3><ul class="list"><li>1k+ followers</li><li>25+ avg viewers</li><li>Stream 4x weekly</li><li>Use hashtags</li><li>Represent Void in-game & socials</li></ul></div>
-
-      <div class="card roster-card"><div class="icon">🎥</div><h3>Content Creator</h3><ul class="list"><li>1k+ Twitch/YouTube</li><li>10k+ TikTok</li><li>Original high-quality posts</li><li>Help Void content</li><li>Active posting</li></ul></div>
-
-      <div class="card roster-card"><div class="icon">🎬</div><h3>Junior Content Creator</h3><ul class="list"><li>500+ Twitch/YouTube</li><li>3k+ TikTok</li><li>High quality original posts</li><li>Grinding toward main roster</li></ul></div>
-
-      <div class="card roster-card"><div class="icon">🖌️</div><h3>GFX / VFX</h3><ul class="list"><li>Editing experience</li><li>Portfolio required</li><li>1440p+ quality</li><li>Assist staff & roster</li><li>On-time delivery</li></ul></div>
-
+      <div class="card"><h3>Professional Language</h3><p>Always communicate clearly and respectfully. Avoid slang, sarcasm, or dismissive responses. Staff represent the organization at all times.</p></div>
+      <div class="card"><h3>Respectful Tone</h3><p>Remain calm with frustrated users. Never argue. Focus on solutions and keep interactions constructive.</p></div>
+      <div class="card"><h3>Response Quality</h3><p>Provide complete answers. Do not give one-word replies. Explain steps clearly so users understand what to do.</p></div>
+      <div class="card"><h3>Authority & Responsibility</h3><p>Do not misuse permissions. Moderation tools exist to protect the community, not for personal disputes.</p></div>
+      <div class="card"><h3>Confidentiality</h3><p>Never share private staff discussions, reports, or internal decisions with regular members.</p></div>
+      <div class="card"><h3>Reliability</h3><p>Be dependable. If you claim a ticket or task, complete it fully instead of leaving it for others.</p></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <h2>Moderator Responsibilities & Commands</h2>
-    <div class="metric-grid">
-      <div class="metric"><h4>Warn / Report</h4><p>Use <strong>*warn user-id reason</strong> in #staff-commands for minor violations. Use <strong>/report</strong> for major or repeated infractions with documentation.</p></div>
-      <div class="metric"><h4>Leave of Absence (LOA)</h4><p>We do not use commands for LOA. Use the format below when submitting:<br><br><strong>User :</strong> ———-<br><strong>Role :</strong> ———-<br><strong>Start Time :</strong> ———-<br><strong>End Time :</strong> ———-<br><strong>Reason :</strong> ————-</p></div>
-      <div class="metric"><h4>Important Ticket Reminder</h4><p>Tickets labeled <strong>ticket-staff</strong> are handled strictly by Staff Department members or higher. This is something many new staff forget. Do not respond to these tickets unless you have proper permissions.</p></div>
-    </div>
-
-    <h2 style="margin-top:50px">Weekly Performance Metrics</h2>
-    <div class="metric-grid">
-      <div class="metric"><h4>10 Tickets</h4><p>Process support tickets</p></div>
-      <div class="metric"><h4>400 Messages</h4><p>Active community engagement</p></div>
-      <div class="metric"><h4>Command Usage</h4><p>Mandatory /login and /logout tracking</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2>Ticket Handling Guidelines</h2>
-    <div class="guidelines">
-      <div class="guideline">
-        <h3>Professional Greetings</h3>
-        <p>Hello, how may I help you?<br>Hello, what can I assist you with today?</p>
-      </div>
-      <div class="guideline">
-        <h3>Role Inquiry</h3>
-        <p>What role are you applying for today?<br>What are you applying for here?</p>
-      </div>
-      <div class="guideline">
-        <h3>Age Verification</h3>
-        <p>May I ask how old you are?<br>What is your current age?</p>
-      </div>
-      <div class="guideline">
-        <h3>Closing the Ticket</h3>
-        <p>Thank you! Here are your roles! Have a nice day!</p>
-      </div>
-    </div>
-
-    <h2 style="margin-top:50px">Role-Specific Instructions</h2>
+    <h2>Ticket System Mastery</h2>
     <div class="grid cards-2">
-      <div class="card"><h3>Creative Roles</h3><div class="rolebox">Send 2–3 clips. Creative Department will review shortly.</div></div>
-      <div class="card"><h3>Academy Roster</h3><div class="rolebox">Link tracker + default dance lobby image.</div></div>
-      <div class="card"><h3>Semi-Pro / Pro</h3><div class="rolebox">Send tracker + lobby image. Operations will review.</div></div>
-      <div class="card"><h3>GFX / VFX</h3><div class="rolebox">Link portfolio. Leads will review shortly.</div></div>
-      <div class="card"><h3>Content Creator</h3><div class="rolebox">Link social media. Content Department will review.</div></div>
-      <div class="card"><h3>Coach</h3><div class="rolebox">Provide number of players coached + trackers.</div></div>
+      <div class="card"><h3>General Tickets</h3><p>Support inquiries, assistance requests, and reports. Handle politely and escalate serious issues properly.</p></div>
+      <div class="card"><h3>Roster Tickets</h3><p>Applications to join Void Esports. Must follow structured onboarding and verification steps.</p></div>
+    </div>
+    <div class="protocol"><strong>Protocol:</strong> Begin with a professional greeting and age verification. Maintain detailed records and guide users clearly through next steps.<br><br><strong>Important:</strong> Tickets labeled <strong>ticket-staff</strong> are for Staff Department members or higher only. Many new staff forget this rule.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Leave of Absence (LOA) Format</h2>
+    <div class="card">
+      <p>We do not use commands for LOA. Use this exact format:</p>
+      <div class="rolebox">
+        <strong>User :</strong> ———-<br>
+        <strong>Role :</strong> ———-<br>
+        <strong>Start Time :</strong> ———-<br>
+        <strong>End Time :</strong> ———-<br>
+        <strong>Reason :</strong> ————-
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Moderator Performance Expectations</h2>
+    <div class="metric-grid">
+      <div class="metric"><h4>Ticket Accuracy</h4><p>Follow correct procedures without skipping verification steps.</p></div>
+      <div class="metric"><h4>Activity Level</h4><p>Remain active and responsive within moderation channels.</p></div>
+      <div class="metric"><h4>Decision Making</h4><p>Use evidence before issuing punishments or escalating cases.</p></div>
+      <div class="metric"><h4>Team Coordination</h4><p>Communicate with other staff to prevent duplicate handling.</p></div>
     </div>
   </div>
 </section>
@@ -325,7 +199,7 @@ footer{
 <section class="cta">
   <div class="container">
     <h2>Complete Your Certification Test</h2>
-    <p>When you are confident with all procedures and requirements, proceed to the official moderator assessment.</p>
+    <p>Review all sections carefully. When ready, proceed to the official moderator assessment.</p>
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdwhpQEk86xNvnqB84vLrpB17GhCTHmw1Tu-YmUwoQ23rw8bQ/viewform?usp=sharing&ouid=114687008271274137261" target="_blank">Take Test</a>
   </div>
 </section>
@@ -335,7 +209,6 @@ footer{
 </footer>
 
 <script>
-// Auto progress bar based on scroll
 const fill = document.getElementById('progressFill');
 window.addEventListener('scroll', () => {
   const h = document.documentElement;
@@ -343,5 +216,6 @@ window.addEventListener('scroll', () => {
   fill.style.width = percent + '%';
 });
 </script>
+
 </body>
 </html>
