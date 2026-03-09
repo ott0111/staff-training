@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Void Mod Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f1a;
+  --card:#121829;
+  --soft:#1a233a;
+  --accent:#6c5cff;
+  --accent2:#00d4ff;
+  --text:#e6ebff;
+  --muted:#9aa6d1;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Inter',system-ui,Segoe UI,Roboto,Arial;
+  background:linear-gradient(180deg,#0b0f1a,#0e1424 40%,#0b0f1a);
+  color:var(--text);
+}
+.container{width:min(1200px,92%);margin:auto}
+header{
+  padding:80px 0 60px;
+  text-align:center;
+  background:radial-gradient(circle at 50% 0%,rgba(108,92,255,.25),transparent 60%);
+}
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  background:rgba(108,92,255,.15);
+  border:1px solid rgba(108,92,255,.35);
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+h1{
+  font-size:clamp(32px,5vw,56px);
+  margin:0 0 18px;
+  font-weight:800;
+  background:linear-gradient(90deg,#fff,#b8c1ff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.subtitle{
+  font-size:18px;
+  color:var(--muted);
+  max-width:780px;
+  margin:0 auto 28px;
+  line-height:1.6;
+}
+.steps{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+.step{
+  padding:10px 18px;
+  border-radius:12px;
+  background:var(--soft);
+  border:1px solid rgba(255,255,255,.06);
+  font-weight:600;
+  font-size:14px;
+}
+.credit{
+  margin-top:26px;
+  font-size:13px;
+  color:var(--muted);
+}
+.section{padding:70px 0;border-top:1px solid rgba(255,255,255,.05)}
+.section h2{
+  font-size:28px;
+  margin:0 0 28px;
+  letter-spacing:.3px;
+}
+.grid{
+  display:grid;
+  gap:22px;
+}
+.cards-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.cards-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+.card h3{margin:0 0 12px;font-size:18px}
+.card p{margin:0;color:var(--muted);line-height:1.6;font-size:14px}
+.list{padding-left:18px;margin:10px 0 0}
+.list li{margin:6px 0;color:var(--muted);font-size:14px}
+.protocol{
+  margin-top:18px;
+  padding:16px;
+  background:rgba(0,212,255,.08);
+  border:1px solid rgba(0,212,255,.25);
+  border-radius:14px;
+  font-size:14px;
+  color:#bfefff;
+}
+.roster-card{position:relative;overflow:hidden}
+.roster-card .icon{font-size:26px;margin-bottom:8px}
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.metric{
+  background:linear-gradient(180deg,#141b31,#10162a);
+  border:1px solid rgba(255,255,255,.05);
+  padding:18px;
+  border-radius:16px;
+}
+.metric h4{margin:0 0 8px}
+.guidelines{display:grid;gap:18px}
+.guideline{
+  padding:18px;
+  border-radius:16px;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.05);
+}
+.rolebox{
+  margin-top:10px;
+  padding:12px;
+  background:var(--soft);
+  border-radius:12px;
+  font-size:13px;
+  color:var(--muted);
+}
+.cta{
+  text-align:center;
+  padding:90px 0 110px;
+  background:radial-gradient(circle at 50% 100%,rgba(0,212,255,.18),transparent 60%);
+}
+.cta h2{font-size:34px;margin-bottom:14px}
+.cta p{color:var(--muted);margin-bottom:28px}
+.btn{
+  display:inline-block;
+  padding:16px 34px;
+  font-size:16px;
+  font-weight:700;
+  border-radius:14px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:white;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(108,92,255,.35);
+  transition:.2s transform,.2s box-shadow;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(108,92,255,.5)}
+footer{
+  border-top:1px solid rgba(255,255,255,.05);
+  padding:26px 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="badge">Void Esports Staff Certification</div>
+    <h1>Void Mod Training</h1>
+    <p class="subtitle">Comprehensive certification program for new Void Esports moderators. Master ticket handling, roster management, and community moderation through interactive scenarios and real-time testing.</p>
+    <div class="steps">
+      <div class="step">Learn</div>
+      <div class="step">Practice</div>
+      <div class="step">Complete</div>
+    </div>
+    <div class="credit">Made by Nicks Cold</div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2>Ticket Types</h2>
+    <div class="grid cards-2">
+      <div class="card">
+        <h3>General Ticket</h3>
+        <p>Created by community members for support inquiries, moderator assistance, or reporting issues. Handle with professionalism and follow escalation procedures for complex matters.</p>
+      </div>
+      <div class="card">
+        <h3>Roster Ticket</h3>
+        <p>Application channel for users seeking to join Void Esports. Initial response must include age verification and direction to appropriate resources. Follow structured onboarding workflow.</p>
+      </div>
+    </div>
+    <div class="protocol"><strong>Protocol:</strong> All ticket responses must begin with a professional greeting and age inquiry. Direct applicants properly and maintain detailed records of all interactions.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Roster Categories & Requirements</h2>
+    <div class="grid cards-3">
+
+      <div class="card roster-card"><div class="icon">🏆</div><h3>Pro Roster</h3><ul class="list"><li>25,000+ Power Ranking</li><li>$1,000+ Fortnite Earnings</li><li>Consistent placements</li><li>Represent Void in-game & socials</li></ul></div>
+
+      <div class="card roster-card"><div class="icon">🎮</div><h3>Semi-Pro</h3><ul class="list"><li>10,000–25,000 PR</li><li>Consistent placements</li><li>Represent Void in-game</li><li>Use Fortnite Code</li><li>Earnings required</li></ul></div>
+
+      <div class="card roster-card"><div class="icon">🎓</div><h3>Academy Roster</h3><ul class="list"><li>500–10,000 PR</li><li>Consistent placements</li><li>Represent Void in-game</li><li>Use Fortnite Code</li></ul></div>
+
+      <div class="card roster-card"><div class="icon">🎨</div><h3>Creative Roster</h3><ul class="list"><li>Smooth / fast mechanics</li><li>Unique playstyle</li><li>Provide clips when asked</li><li>Represent Void in-game & socials</li></ul></div>
+
+      <div class="card roster-card"><div class="icon">🎙️</div><h3>Streamer</h3><ul class="list"><li>1k+ followers</li><li>25+ avg viewers</li><li>Stream 4x weekly</li><li>Use hashtags</li><li>Represent Void in-game & socials</li></ul></div>
+
+      <div class="card roster-card"><div class="icon">🎥</div><h3>Content Creator</h3><ul class="list"><li>1k+ Twitch/YouTube</li><li>10k+ TikTok</li><li>Original high-quality posts</li><li>Help Void content</li><li>Active posting</li></ul></div>
+
+      <div class="card roster-card"><div class="icon">🎬</div><h3>Junior Content Creator</h3><ul class="list"><li>500+ Twitch/YouTube</li><li>3k+ TikTok</li><li>High quality original posts</li><li>Grinding toward main roster</li></ul></div>
+
+      <div class="card roster-card"><div class="icon">🖌️</div><h3>GFX / VFX</h3><ul class="list"><li>Editing experience</li><li>Portfolio required</li><li>1440p+ quality</li><li>Assist staff & roster</li><li>On-time delivery</li></ul></div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Moderator Responsibilities & Commands</h2>
+    <div class="metric-grid">
+      <div class="metric"><h4>Warn / Report</h4><p>Use <strong>*warn user-id reason</strong> in #staff-commands for minor violations. Use <strong>/report</strong> for major or repeated infractions with documentation.</p></div>
+      <div class="metric"><h4>LOA</h4><p>Use <strong>/loa</strong> when unavailable. Include duration and reason. Extended absences require senior staff notice.</p></div>
+      <div class="metric"><h4>Shift Management</h4><p>Start with <strong>/login</strong> and end with <strong>/logout</strong>. Missing logs may cause disciplinary review.</p></div>
+    </div>
+
+    <h2 style="margin-top:50px">Weekly Performance Metrics</h2>
+    <div class="metric-grid">
+      <div class="metric"><h4>10 Tickets</h4><p>Process support tickets</p></div>
+      <div class="metric"><h4>400 Messages</h4><p>Active community engagement</p></div>
+      <div class="metric"><h4>Command Usage</h4><p>Mandatory /login and /logout tracking</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Ticket Handling Guidelines</h2>
+    <div class="guidelines">
+      <div class="guideline">
+        <h3>Professional Greetings</h3>
+        <p>Hello, how may I help you?<br>Hello, what can I assist you with today?</p>
+      </div>
+      <div class="guideline">
+        <h3>Role Inquiry</h3>
+        <p>What role are you applying for today?<br>What are you applying for here?</p>
+      </div>
+      <div class="guideline">
+        <h3>Age Verification</h3>
+        <p>May I ask how old you are?<br>What is your current age?</p>
+      </div>
+      <div class="guideline">
+        <h3>Closing the Ticket</h3>
+        <p>Thank you! Here are your roles! Have a nice day!</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:50px">Role-Specific Instructions</h2>
+    <div class="grid cards-2">
+      <div class="card"><h3>Creative Roles</h3><div class="rolebox">Send 2–3 clips. Creative Department will review shortly.</div></div>
+      <div class="card"><h3>Academy Roster</h3><div class="rolebox">Link tracker + default dance lobby image.</div></div>
+      <div class="card"><h3>Semi-Pro / Pro</h3><div class="rolebox">Send tracker + lobby image. Operations will review.</div></div>
+      <div class="card"><h3>GFX / VFX</h3><div class="rolebox">Link portfolio. Leads will review shortly.</div></div>
+      <div class="card"><h3>Content Creator</h3><div class="rolebox">Link social media. Content Department will review.</div></div>
+      <div class="card"><h3>Coach</h3><div class="rolebox">Provide number of players coached + trackers.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Complete Your Certification Test</h2>
+    <p>When you are confident with all procedures and requirements, proceed to the official moderator assessment.</p>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdwhpQEk86xNvnqB84vLrpB17GhCTHmw1Tu-YmUwoQ23rw8bQ/viewform?usp=sharing&ouid=114687008271274137261" target="_blank">Take Test</a>
+  </div>
+</section>
+
+<footer>
+  Void Esports Moderator Training • Internal Certification System
+</footer>
+
+</body>
+</html>
