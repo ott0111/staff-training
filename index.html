@@ -7,13 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0b0f1a;
-  --card:#121829;
-  --soft:#1a233a;
-  --accent:#6c5cff;
-  --accent2:#00d4ff;
-  --text:#e6ebff;
-  --muted:#9aa6d1;
+  --bg:#0a0614;
+  --card:#140f24;
+  --soft:#1b1533;
+  --accent:#7c3aed;
+  --accent2:#a855f7;
+  --text:#f3f0ff;
+  --muted:#b9b2d9;
 }
 *{box-sizing:border-box}
 body{
@@ -158,6 +158,51 @@ footer{
   color:var(--muted);
   font-size:13px;
 }
+
+.progress-wrap{
+  margin:30px auto 10px;
+  max-width:520px;
+  text-align:left;
+}
+.progress-label{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:8px;
+  letter-spacing:.4px;
+  text-transform:uppercase;
+}
+.progress-bar{
+  width:100%;
+  height:14px;
+  background:rgba(255,255,255,.08);
+  border-radius:999px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+}
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  border-radius:999px;
+  box-shadow:0 0 18px rgba(168,85,247,.6);
+  transition:width .6s ease;
+}
+.section{
+  padding:80px 0;
+  border-top:1px solid rgba(255,255,255,.05);
+  position:relative;
+}
+.section:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:120px;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:.7;
+}
 </style>
 </head>
 <body>
@@ -165,6 +210,13 @@ footer{
 <header>
   <div class="container">
     <div class="badge">Void Esports Staff Certification</div>
+
+    <div class="progress-wrap">
+      <div class="progress-label">Training Progress</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
     <h1>Void Mod Training</h1>
     <p class="subtitle">Comprehensive certification program for new Void Esports moderators. Master ticket handling, roster management, and community moderation through interactive scenarios and real-time testing.</p>
     <div class="steps">
@@ -172,7 +224,7 @@ footer{
       <div class="step">Practice</div>
       <div class="step">Complete</div>
     </div>
-    <div class="credit">Made by Yeezy</div>
+    <div class="credit">Made by Nicks Cold</div>
   </div>
 </header>
 
@@ -189,7 +241,7 @@ footer{
         <p>Application channel for users seeking to join Void Esports. Initial response must include age verification and direction to appropriate resources. Follow structured onboarding workflow.</p>
       </div>
     </div>
-    <div class="protocol"><strong>Protocol:</strong> All ticket responses must begin with a professional greeting and age inquiry. Direct applicants properly and maintain detailed records of all interactions.</div>
+    <div class="protocol"><strong>Protocol:</strong> All ticket responses must begin with a professional greeting and age inquiry. Direct applicants properly and maintain detailed records of all interactions.<br><br><strong>Reminder:</strong> Tickets labeled <strong>ticket-staff</strong> are for Staff Department members or higher only. Many new staff forget this rule.</div>
   </div>
 </section>
 
@@ -223,8 +275,8 @@ footer{
     <h2>Moderator Responsibilities & Commands</h2>
     <div class="metric-grid">
       <div class="metric"><h4>Warn / Report</h4><p>Use <strong>*warn user-id reason</strong> in #staff-commands for minor violations. Use <strong>/report</strong> for major or repeated infractions with documentation.</p></div>
-      <div class="metric"><h4>LOA</h4><p>Use <strong>/loa</strong> when unavailable. Include duration and reason. Extended absences require senior staff notice.</p></div>
-      <div class="metric"><h4>Shift Management</h4><p>Start with <strong>/login</strong> and end with <strong>/logout</strong>. Missing logs may cause disciplinary review.</p></div>
+      <div class="metric"><h4>Leave of Absence (LOA)</h4><p>We do not use commands for LOA. Use the format below when submitting:<br><br><strong>User :</strong> ———-<br><strong>Role :</strong> ———-<br><strong>Start Time :</strong> ———-<br><strong>End Time :</strong> ———-<br><strong>Reason :</strong> ————-</p></div>
+      <div class="metric"><h4>Important Ticket Reminder</h4><p>Tickets labeled <strong>ticket-staff</strong> are handled strictly by Staff Department members or higher. This is something many new staff forget. Do not respond to these tickets unless you have proper permissions.</p></div>
     </div>
 
     <h2 style="margin-top:50px">Weekly Performance Metrics</h2>
@@ -282,5 +334,14 @@ footer{
   Void Esports Moderator Training • Internal Certification System
 </footer>
 
+<script>
+// Auto progress bar based on scroll
+const fill = document.getElementById('progressFill');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const percent = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  fill.style.width = percent + '%';
+});
+</script>
 </body>
 </html>
